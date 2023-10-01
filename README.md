@@ -1,3 +1,17 @@
-# React SSR Feature Sliced Design
+# React Virtualized List:
 
-## Starts client on http://localhost:3333
+## Стек и архитектура
+
+- React
+- RTK Query
+- React Router DOM 6
+- JSON Placeholder
+- Feature Sliced Design
+
+## Приложение:
+
+1. Главная страница - список постов (бесконечный скролл + виртуализация)
+2. Каждый пост в списке - это строка: номер + заголовок + описание обрезанное "...", если не влезает + кнопка "подробнее"
+3. Кнопка "подробнее" ведет на отдельный роут, где отображается полная информация о посте в произвольной форме + кнопка "назад"
+
+## Ссылка: https://navfront.github.io/React-rtk-virtualized
