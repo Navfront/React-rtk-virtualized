@@ -1,30 +1,29 @@
 import { FC, ReactNode } from "react";
 
 import styles from "./styles.module.scss";
+import { useGetPostByIdQuery } from "../api/post-api";
 
 interface PostCardProps {
-  cardNumber: number;
   id: number;
-  title: string;
-  description: string;
   bottomSlot?: (id: PostCardProps["id"]) => ReactNode;
 }
 
-const PostCard: FC<PostCardProps> = ({
-  id,
-  title,
-  description,
-  cardNumber,
-  bottomSlot,
-}) => {
-  return (
-    <article className={styles.card + ` card mb-3 d-grid`}>
-      <h3 className={styles.title}>{title}</h3>
-      <span className={styles.number}>{cardNumber}</span>
-      <p className={styles.descr}> {description}</p>
-      {bottomSlot && <div className={styles.btn}>{bottomSlot(id)}</div>}
-    </article>
-  );
+const PostCard: FC<PostCardProps> = ({ id, bottomSlot }) => {
+  const { data } = useGetPostByIdQuery(id.toString());
+
+  if (data) {
+    const { id, title, description } = data;
+    return (
+      <article className={styles.mycard}>
+        <h3 className={styles.title}>{title}</h3>
+        <span className={styles.number}>{id}.</span>
+        <p className={styles.descr}> {description}</p>
+        {bottomSlot && <div className={styles.btn}>{bottomSlot(id)}</div>}
+      </article>
+    );
+  }
+
+  return null;
 };
 
 export { PostCard };
