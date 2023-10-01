@@ -3,13 +3,18 @@ import { FC, ReactElement } from "react";
 import "@shared/styles/globals.scss";
 import { ErrorBoundary } from "@shared/ui/error-boundary";
 import { Router } from "@src/pages";
+import { Provider } from "react-redux";
+
+import { store } from "./store";
 import "./styles/index.scss";
 
 const App: FC = (): ReactElement => {
   return (
-    <ErrorBoundary>
-      <Router />
-    </ErrorBoundary>
+    <Provider store={store}>
+      <ErrorBoundary>
+        <Router />
+      </ErrorBoundary>
+    </Provider>
   );
 };
 
