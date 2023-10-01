@@ -3,8 +3,8 @@ import { FC } from "react";
 import { ROUTE_CONSTANTS } from "@shared/config";
 import { Route, Routes } from "react-router-dom";
 
+import { ProductDetailedPage } from "./details";
 import { NotFound } from "./not-found/";
-import { ProductDetailedPage } from "./product-detailed";
 import { ProductsPage } from "./products";
 
 export const Router: FC = () => (

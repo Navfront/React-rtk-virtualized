@@ -1,1 +1,1 @@
-export { BtnToPostDetails } from "./BtnToPostDetails/ui";
+export { BtnToPostDetails } from "./BtnToDetails/ui";
