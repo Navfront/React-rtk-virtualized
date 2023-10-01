@@ -1,14 +1,12 @@
 {
-  "name": "MyReactSSR",
+  "name": "myreactssr",
   "license": "MIT",
   "version": "1.0.0",
-  "repository": "https://github.com/ruslan4432013/e-commerce-kts.git",
+  "repository": "https://github.com/Navfront/React-rtk-virtualized.git",
   "author": "Andrey Nazhiganov <b3rt@yandex.ru>",
   "private": true,
-  "browserslist": [
-    ">0.2%",
-    "not dead"
-  ],
+  "homepage": "https://navfront.github.io/React-rtk-virtualized",
+  "browserslist": [">0.2%", "not dead"],
   "scripts": {
     "clean": "rimraf dist",
     "start:webpack": "cross-env NODE_ENV=development webpack --mode=development",
