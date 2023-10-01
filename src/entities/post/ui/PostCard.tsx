@@ -1,5 +1,8 @@
 import { FC, ReactNode } from "react";
 
+import { Preloader } from "@src/shared/ui/preloader";
+import cn from "classnames";
+
 import styles from "./styles.module.scss";
 import { useGetPostByIdQuery } from "../api/post-api";
 
@@ -9,21 +12,29 @@ interface PostCardProps {
 }
 
 const PostCard: FC<PostCardProps> = ({ id, bottomSlot }) => {
-  const { data } = useGetPostByIdQuery(id.toString());
+  const { isLoading, error, data } = useGetPostByIdQuery(id.toString());
 
-  if (data) {
-    const { id, title, description } = data;
-    return (
-      <article className={styles.mycard}>
-        <h3 className={styles.title}>{title}</h3>
-        <span className={styles.number}>{id}.</span>
-        <p className={styles.descr}> {description}</p>
-        {bottomSlot && <div className={styles.btn}>{bottomSlot(id)}</div>}
-      </article>
-    );
-  }
+  const cardData = data || { title: "Loading..", description: "" };
 
-  return null;
+  return (
+    <article
+      className={cn({
+        [styles.mycard]: true,
+        [styles.loading]: isLoading,
+        error: Boolean(error),
+      })}
+    >
+      <h3 className={styles.title}>{cardData.title}</h3>
+      <span className={styles.number}>{id}.</span>
+      <p className={styles.descr}> {cardData.description}</p>
+      {bottomSlot && (
+        <div className={cn({ [styles.btn]: true, disabled: isLoading })}>
+          {bottomSlot(id)}
+        </div>
+      )}
+      {isLoading && <Preloader className={styles.preloader} />}
+    </article>
+  );
 };
 
 export { PostCard };
