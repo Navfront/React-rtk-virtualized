@@ -4,6 +4,7 @@ import AutoSizer from "react-virtualized-auto-sizer";
 import { VariableSizeList as List } from "react-window";
 
 import { getRow } from "./../lib/get-row";
+import styles from "./styles.module.scss";
 import { getRowSizes } from "../lib/get-row-sizes";
 
 interface VirtualizedListProps {
@@ -28,7 +29,7 @@ const VirtualizedList: FC<VirtualizedListProps> = ({
       {() => {
         return (
           <List
-            className="List"
+            className={styles.virt}
             height={listHeight}
             itemCount={totalItems}
             itemSize={getItemSize}
