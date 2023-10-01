@@ -4,17 +4,18 @@ import { PageMeta } from "@shared/ui/page-meta";
 import { Button } from "@src/shared/ui/button";
 import { Header } from "@widgets/header";
 import { PostDetails } from "@widgets/postDetails";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export const ProductDetailedPage = () => {
   const { productId } = useParams();
+  const navigate = useNavigate();
 
-  const { isLoading, data } = useGetPostByIdQuery(
+  const { isLoading, error, data } = useGetPostByIdQuery(
     productId ? productId.toString() : ""
   );
 
-  if (!productId) {
-    throw new Error("Product ID is undefined");
+  if (error) {
+    navigate("/404");
   }
 
   return (
