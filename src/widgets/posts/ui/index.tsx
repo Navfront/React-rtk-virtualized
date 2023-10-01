@@ -1,52 +1,32 @@
 import { FC } from "react";
 
 import { PostCard, useGetPostsQuery } from "@entities/post";
+import { VirtualizedList } from "@shared/ui/virtualized-list";
 import { BtnToPostDetails } from "@src/features";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { VariableSizeList as List } from "react-window";
+
+import styles from "./styles.module.scss";
+import { ITEM_HEIGTH, LIST_HEIGHT } from "../config/virtualized-list-config";
 
 const Posts: FC = () => {
   const { data } = useGetPostsQuery("0");
 
-  const totalItems = data ? data.total : 0;
-  const rowSizes = new Array(totalItems).fill(true).map(() => 230);
-
-  const getItemSize = (index: number) => rowSizes[index];
-
-  const Row = ({ index, style }: any) => {
-    const currentId = index + 1;
-    return (
-      <div className="" style={style}>
-        <PostCard
-          id={currentId}
-          bottomSlot={() => <BtnToPostDetails productId={currentId} />}
-        />
-      </div>
-    );
-  };
-
   return (
-    <section>
-      <div style={{ width: 100, height: 1 }}></div>
-
+    <section className={styles.expand}>
       {data && (
-        <AutoSizer style={{ display: "contents" }}>
-          {() => {
+        <VirtualizedList
+          totalItems={data?.total || 0}
+          listHeight={LIST_HEIGHT}
+          itemHeight={ITEM_HEIGTH}
+          renderComponent={(index) => {
+            const currentId = index + 1;
             return (
-              <List
-                className="List "
-                height={700}
-                itemCount={100}
-                itemSize={getItemSize}
-                width="100%"
-                itemData={data.products}
-                style={{ margin: "0 auto" }}
-              >
-                {Row}
-              </List>
+              <PostCard
+                id={currentId}
+                bottomSlot={() => <BtnToPostDetails productId={currentId} />}
+              />
             );
           }}
-        </AutoSizer>
+        />
       )}
     </section>
   );

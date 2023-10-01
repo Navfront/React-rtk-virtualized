@@ -12,7 +12,7 @@ const Header: FC = () => {
             <ReactSvg />
           </Button>
         </nav>
-        <h1 className="d-flex m-0">React App</h1>
+        <h1 className="d-flex m-0 fs-3">Virtualized List + RTK Query</h1>
       </div>
     </header>
   );
