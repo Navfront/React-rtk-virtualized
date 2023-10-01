@@ -1,0 +1,196 @@
+{
+  "name": "client",
+  "hash": "c09726d03fe3d156b578",
+  "publicPath": "/",
+  "outputPath": "D:\\_Prj\\react-ts\\dist",
+  "assetsByChunkName": {
+    "main": [
+      "main.a846e17ed549aaa81a8b.js",
+      "main.47503a7a057c86f3af7d.css"
+    ],
+    "vendors": [
+      "vendors.be3987f30c5ea14a47d4.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "vendors.be3987f30c5ea14a47d4.js",
+      "size": 283510,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "be3987f30c5ea14a47d4",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "license": "vendors.be3987f30c5ea14a47d4.js.LICENSE.txt"
+        }
+      },
+      "chunkNames": [
+        "vendors"
+      ],
+      "chunkIdHints": [
+        "vendor"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        216
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "main.47503a7a057c86f3af7d.css",
+      "size": 223915,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "contenthash": "47503a7a057c86f3af7d"
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [
+        179
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "main.a846e17ed549aaa81a8b.js",
+      "size": 15688,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "a846e17ed549aaa81a8b",
+        "javascriptModule": false,
+        "minimized": true
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [
+        179
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "favicon.svg",
+      "size": 2664,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/assets/images/favicon.svg"
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "481.ffc8edfc260511eaeed1.js",
+      "size": 2001,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "ffc8edfc260511eaeed1",
+        "javascriptModule": false,
+        "minimized": true
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [
+        481
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "index.html",
+      "size": 495,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {},
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [],
+      "auxiliaryChunks": []
+    }
+  ],
+  "namedChunkGroups": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        216,
+        179
+      ],
+      "assets": [
+        {
+          "name": "vendors.be3987f30c5ea14a47d4.js"
+        },
+        {
+          "name": "main.a846e17ed549aaa81a8b.js"
+        },
+        {
+          "name": "main.47503a7a057c86f3af7d.css"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": 179,
+      "files": [
+        "main.a846e17ed549aaa81a8b.js",
+        "main.47503a7a057c86f3af7d.css"
+      ]
+    },
+    {
+      "id": 481,
+      "files": [
+        "481.ffc8edfc260511eaeed1.js"
+      ]
+    },
+    {
+      "id": 216,
+      "files": [
+        "vendors.be3987f30c5ea14a47d4.js"
+      ]
+    }
+  ]
+}
